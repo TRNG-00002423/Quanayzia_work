@@ -1,0 +1,240 @@
+Steps for creating a Repo:
+
+TASK 1: 
+
+1. Create a new directory called qa-project and initialize it as a Git repo.
+  >> mkdir qa-project 
+
+
+2. Create a file called README.md
+   \Users\qjgar\Documents\Revature\qa-project> echo "# QA Project
+      A quality assurance automation project." > README.md
+
+3. Stage and commit with the message: "Initial commit: add README".
+   \Users\qjgar\Documents\Revature\qa-project> git status 
+   \Users\qjgar\Documents\Revature\qa-project> git add . or git add README.md  
+   \Users\qjgar\Documents\Revature\qa-project> git commit -m "Initial commit: add README"
+
+4. Verify your commit with git log --oneline.
+    \Users\qjgar\Documents\Revature\qa-project> PS C:\Users\qjgar\Documents\Revature\qa-project> git log --oneline
+b5e310e (HEAD -> main) Initial commit: add README
+
+
+
+Task 2: Create a Feature Branch (15 min)
+
+1. Create and switch to a new branch called feature/add-test-plan.
+   \Users\qjgar\Documents\Revature\qa-project> git checkout -b feature/add-test-plan
+
+2. Create a file called test-plan.md with the following content:
+    \Users\qjgar\Documents\Revature\qa-project> echo "# Test Plan`n`n ## Scope`n- Login functionality`n- User Registration`n- Password reset`n`n## Test Types`n- Unit Tests`n- Integration Tests`n- End-to-end tests" > test_plan.md
+
+3. Stage and commit: "Add test plan document".
+\Users\qjgar\Documents\Revature\qa-project> git status 
+\Users\qjgar\Documents\Revature\qa-project> git add .
+\Users\qjgar\Documents\Revature\qa-project> git commit -m "Add test plan document"
+	[feature/add-test-plan 990b051] Add test plan document
+ 	1 file changed, 0 insertions(+), 0 deletions(-)
+ 	create mode 100644 test_plan.md
+
+
+4. Create another file called test-cases.md
+    Users\qjgar\Documents\Revature\qa-project> echo "# Test Cases`n`n## TC-001: Valid Login`n- **Input:** Valid username and password`n- **Expected:** Redirect to dashboard`n`n## TC-002: Invalid Login`n- **Input:** Invalid password`n- **Expected:** Error message displayed" > test-cases.md
+
+5.Stage and commit: "Add initial test cases".
+   \Users\qjgar\Documents\Revature\qa-project> git add .
+   \Users\qjgar\Documents\Revature\qa-project>  git commit -m "Add initial test cases"
+	[feature/add-test-plan cd43ca6] Add initial test cases
+ 	1 file changed, 0 insertions(+), 0 deletions(-)
+ 	create mode 100644 test-cases.md
+
+5.Run git log --oneline and note that you have 3 commits on the feature branch.
+   \Users\qjgar\Documents\Revature\qa-project> git log --oneline
+	cd43ca6 (HEAD -> feature/add-test-plan) Add initial test cases
+	990b051 Add test plan document
+	b5e310e (main) Initial commit: add README
+
+
+Task 3: 
+
+1.Switch back to main.
+    \Users\qjgar\Documents\Revature\qa-project> git checkout main
+
+2. List Files in the directory 
+  \Users\qjgar\Documents\Revature\qa-project> ls -a 
+   \Users\qjgar\Documents\Revature\qa-project> ls
+    Directory: C:\Users\qjgar\Documents\Revature\qa-project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          6/1/2026   3:55 PM            110 README.md
+
+3. Question: Where did test-plan.md and test-cases.md go? Write your answer as a comment in your terminal.
+   A: These files were created on the feature/add-test-plan branch and cannot be seen by main. 
+ 
+
+
+Task 4: 
+
+1.While on main, edit README.md to add a "Team" section:
+echo "`n`n## Team`n- Lead: Your Name`n- Role: QA Engineer" > README.md
+
+2.
+\Users\qjgar\Documents\Revature\qa-project> git status
+\Users\qjgar\Documents\Revature\qa-project> git add .
+\Users\qjgar\Documents\Revature\qa-project> git commit -m "Add team section to README"
+	[main ab8f944] Add team section to README
+ 	1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+
+
+
+Task 5: Merge the Feature Branch 
+
+1. Merge feature/add-test-plan into main.
+\Users\qjgar\Documents\Revature\qa-project> git merge feature/add-test-plan
+	Merge made by the 'ort' strategy.
+ 		test-cases.md | Bin 0 -> 428 bytes
+ 		test_plan.md  | Bin 0 -> 302 bytes
+ 		2 files changed, 0 insertions(+), 0 deletions(-)
+ 		create mode 100644 test-cases.md
+ 		create mode 100644 test_plan.md
+
+
+2. Verify that test-plan.md and test-cases.md now exist on main.
+\Users\qjgar\Documents\Revature\qa-project> ls
+
+
+    Directory: C:\Users\qjgar\Documents\Revature\qa-project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          6/1/2026   4:10 PM            204 README.md
+-a----          6/1/2026   4:14 PM            428 test-cases.md
+-a----          6/1/2026   4:14 PM            302 test_plan.md
+
+
+PS C:\Users\qjgar\Documents\Revature\qa-project>
+
+3. Run git log --oneline --graph to see the merge history.
+\Users\qjgar\Documents\Revature\qa-project> git log --oneline --graph
+*   71a8417 (HEAD -> main) Merge branch 'feature/add-test-plan'
+|\
+| * cd43ca6 (feature/add-test-plan) Add initial test cases
+| * 990b051 Add test plan document
+* | ab8f944 Add team section to README
+|/
+* b5e310e Initial commit: add README
+PS C:\Users\qjgar\Documents\Revature\qa-project>
+
+4.Delete the merged branch: git branch -d feature/add-test-plan.
+\Users\qjgar\Documents\Revature\qa-project> git branch -d feature/add-test-plan
+Deleted branch feature/add-test-plan (was cd43ca6).
+
+Task 6: Simulate and Resolve a Merge Conflict
+1. Create a new branch: feature/update-test-plan.
+\Users\qjgar\Documents\Revature\qa-project> git checkout -b feature/update-test-plan
+
+2. On the feature branch, edit test-plan.md — change the "Scope" section:
+  - Done with VS Code 
+3. Commit: "Expand test plan scope on feature branch".
+    \Users\qjgar\Documents\Revature\qa-project> git add .
+    \Users\qjgar\Documents\Revature\qa-project> git commit -m"Expand test plan scope on feature branch"
+	[feature/update-test-plan 108bed2] Expand test plan scope on feature branch
+	 1 file changed, 0 insertions(+), 0 deletions(-)
+	PS C:\Users\qjgar\Documents\Revature\qa-project> 
+
+4. Switch back to main.
+\Users\qjgar\Documents\Revature\qa-project> git checkout main 
+
+5. On main, edit the SAME file test-plan.md — change the "Scope" section differently
+  - done via VS Code 
+6. Commit: "Update test plan scope on main".
+     \Users\qjgar\Documents\Revature\qa-project> git add .
+     \Users\qjgar\Documents\Revature\qa-project> git commit -m"Update test plan scope on main"
+	[main 711a4c4] Update test plan scope on main
+ 	1 file changed, 0 insertions(+), 0 deletions(-)
+
+7. Attempt to merge feature/update-test-plan into main.
+   \Users\qjgar\Documents\Revature\qa-project> git merge feature/update-test-plan
+
+8. You should see a CONFLICT. Open test-plan.md and observe the conflict markers:
+       warning: Cannot merge binary files: test_plan.md (HEAD vs. feature/update-test-plan)
+       Auto-merging test_plan.md
+       CONFLICT (content): Merge conflict in test_plan.md
+       Automatic merge failed; fix conflicts and then commit the result.
+9. Resolve the conflict by combining both versions:
+       \Users\qjgar\Documents\Revature\qa-project> git status      
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   test_plan.md
+10.
+      \Users\qjgar\Documents\Revature\qa-project> git add test_plan.md
+      \Users\qjgar\Documents\Revature\qa-project> git commit -m "Resolve merge conflict: combine scope updates"
+	[main 2848831] Resolve merge conflict: combine scope updates
+      \Users\qjgar\Documents\Revature\qa-project> git merge feature/update-test-plan                           
+	Already up to date.
+
+11. Run git log --oneline --graph to see the full history.
+\Users\qjgar\Documents\Revature\qa-project> git log --oneline --graph
+*   2848831 (HEAD -> main) Resolve merge conflict: combine scope updates
+|\  
+| * 108bed2 (feature/update-test-plan) Expand test plan scope on feature branch
+* | 711a4c4 Update test plan scope on main
+|/  
+*   71a8417 Merge branch 'feature/add-test-plan'
+|\  
+| * cd43ca6 Add initial test cases
+| * 990b051 Add test plan document
+* | ab8f944 Add team section to README
+|/  
+* b5e310e Initial commit: add README
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
