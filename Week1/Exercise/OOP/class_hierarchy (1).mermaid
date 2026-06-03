@@ -1,0 +1,44 @@
+classDiagram
+    class TestCase {
+        +int total_created$
+        +str name
+        +str description
+        +str priority
+        +list tags
+        +__init__(name, description, priority, tags)
+        +run() TestResult
+        +assertEqual(a, b)
+        +assertTrue(expr)
+        +assertRaises(exc, fn)
+        +from_dict(data)$
+        +is_valid_name(name)$
+    }
+
+    class TestResult {
+        +str test_name
+        +str status
+        +float duration_ms
+        +str error_message
+        +__init__(test_name, status, duration_ms, error_message)
+        +summary() str
+    }
+
+    class TestSuite {
+        +str name
+        +list tests
+        +__init__(name, tests)
+        +add_test(test)
+        +remove_test(name)
+        +get_by_priority(priority) list
+        +count() int
+    }
+
+    class TestRunner {
+        +run(suite) list
+        +summary(results)
+    }
+
+    TestCase ..> TestResult : produces
+    TestSuite o-- TestCase : contains
+    TestRunner --> TestSuite : runs
+    TestRunner ..> TestResult : collects
