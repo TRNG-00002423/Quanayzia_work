@@ -1,0 +1,15 @@
+results exercise_method:
+
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_methods> javac Calculator.java
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_methods> java Calculator
+Use:
+java Calculator <a> <b>
+java Calculator <a> <b> <c>
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_methods> java Calculator 8.0 4.0
+add(a,b): 12.0
+subtract(a,b): 4.0
+multiply(a,b): 32.0
+divide(a,b): 2.0
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_methods> java Calculator 8.0 4.0 2.5
+add(a,b,c): 14.5
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_methods>
