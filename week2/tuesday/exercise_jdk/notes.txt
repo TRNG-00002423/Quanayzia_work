@@ -1,0 +1,37 @@
+Part A: Install & verify
+
+C:\Users\qjgar>java --version
+openjdk 17.0.17 2025-10-21
+OpenJDK Runtime Environment Temurin-17.0.17+10 (build 17.0.17+10)
+OpenJDK 64-Bit Server VM Temurin-17.0.17+10 (build 17.0.17+10, mixed mode, sharing)
+
+C:\Users\qjgar>javac --version
+javac 17.0.17
+
+
+Part B — HelloWeek2 
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday> javac HelloWeek2.java
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday> java HelloWeek2
+Hello, trainee!
+Java Runtime Version: 17.0.17+10
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday> java HelloWeek2 Nay
+Hello Nay!
+Java Runtime Version: 17.0.17+10
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday>
+
+
+Stretch Goal (I changed the file paths but it is still the same java program)
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_jdk> javac HelloWeek2.java
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_jdk> java HelloWeek2
+Hello, trainee!
+Java Runtime Version: 17.0.17+10
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_jdk> java HelloWeek2 Nay
+Hello Nay!
+Java Runtime Version: 17.0.17+10
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_jdk> java HelloWeek2 Nay Garden
+Hello Nay Garden!
+Java Runtime Version: 17.0.17+10
+PS C:\Users\qjgar\Documents\Revature\Quanayzia_work\week2\tuesday\exercise_jdk>
+
+
+
