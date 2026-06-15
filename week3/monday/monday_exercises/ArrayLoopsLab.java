@@ -69,11 +69,11 @@ public class ArrayLoopsLab {
             int min=i;
 
             // interate until smallest is found
-            for(int x=0; x<i;x++){
+            for(int x = i + 1; x < data.length; x++){
 
                 //compare data[min] with data[x]
-                if(data[min]>data[x]){
-                    min=x;
+                if (data[x] < data[min]) {
+                    min = x;
                 }
             }
 
