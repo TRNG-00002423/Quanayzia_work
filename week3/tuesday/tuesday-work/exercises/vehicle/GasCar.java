@@ -1,3 +1,5 @@
+package vehicle;
+
 public class GasCar extends Vehicle {
 
     private double litersPer100Km;
