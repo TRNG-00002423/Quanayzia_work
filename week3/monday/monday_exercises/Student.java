@@ -21,8 +21,11 @@ public class Student {
 
     public Student(String name, String program) {
 
-        this.id=instanceCount;
-        Student.instanceCount++;
+        this.id = nextId++;
+        instanceCount++;
+
+        this.name = name;
+        this.program = program;
 
         //throw new UnsupportedOperationException("TODO assign id, increment count");
     }
@@ -69,16 +72,34 @@ public class Student {
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("TODO");
+
+        return "Student{id=" + id +
+                ", name='" + name + '\'' +
+                ", program='" + program + '\'' +
+                '}';
+        //throw new UnsupportedOperationException("TODO");
     }
 
     @Override
     public boolean equals(Object o) {
-        throw new UnsupportedOperationException("TODO — same id => equal");
+
+        if (this == o) return true;
+
+        if (!(o instanceof Student)) return false;
+
+        Student other = (Student) o;
+
+        return id == other.id;
+
+
+        //throw new UnsupportedOperationException("TODO — same id => equal");
     }
 
     @Override
     public int hashCode() {
-        throw new UnsupportedOperationException("TODO — consistent with equals");
+
+        return Objects.hash(id);
+
+        //throw new UnsupportedOperationException("TODO — consistent with equals");
     }
 }
