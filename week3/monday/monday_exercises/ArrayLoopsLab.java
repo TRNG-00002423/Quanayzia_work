@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 /**
  * Lab 1 — Arrays & loops. Implement the bodies.
  * See ../README.md
@@ -9,8 +11,8 @@ public class ArrayLoopsLab {
 
         // can use the two pointer method to reveres an array inplace
         // 1,2,3,4,5,6,7,8,9
-        // l               r
-
+        // l
+        //
         int left=0;
         int right= data.length-1;
 
