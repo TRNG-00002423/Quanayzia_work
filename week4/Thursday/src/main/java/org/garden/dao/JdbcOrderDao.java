@@ -6,6 +6,7 @@ import org.garden.domain.OrderLine;
 import java.sql.Connection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 /** TODO: implement OrderDao with PreparedStatement only for dynamic values. */
 public final class JdbcOrderDao implements OrderDao {
@@ -37,6 +38,9 @@ public final class JdbcOrderDao implements OrderDao {
 
     @Override
     public List<OrderLine> linesFor(long orderId) throws Exception {
+
+        Scanner scan= new Scanner(System.in);
+        String[] words= scan.nextLine().split(" ");
         return Collections.emptyList();
     }
 
